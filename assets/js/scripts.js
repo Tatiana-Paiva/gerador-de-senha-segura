@@ -21,10 +21,34 @@ const getLetterUperCase = () => {
     return symbols[Math.floor(Math.random() * symbols.length)];
   }
 
-  console.log(getSymbol());
+ const generatePassword = (getLetterLowerCase, getLetterUperCase, getNumber, getSymbol) => {
+  let password = "";
+
+  const passwordLength = 10;
+
+  const generators = [
+    getLetterLowerCase,
+    getLetterUperCase,
+    getNumber,
+    getSymbol
+  ]
+  for(i = 0; i < passwordLength; i = i + generators.length) {
+    generators.forEach(() =>{
+      const randomValue = generators[Math.floor(Math.random() * generators.length)]()
+
+      console.log(randomValue);
+    } )
+  }
+
+ }
 
 // Eventos
 
 generatePasswordButton.addEventListener("click", () => {
-    console.log("Teste");
+   generatePassword(
+     getLetterLowerCase,
+     getLetterUperCase,
+     getNumber,
+     getSymbol
+    );
 })
