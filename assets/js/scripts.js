@@ -9,14 +9,19 @@ const getLetterLowerCase = () => {
 };
 
 const getLetterUperCase = () => {
-    return console.log(String.fromCharCode(Math.floor(Math.random() * 26) + 65));
+    return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
   };
 
   const getNumber = () => {
     return Math.floor( Math.random() * 10).toString();
   }
 
-  console.log(getNumber());
+  const getSymbol = () => {
+    const symbols = "() {} [] = <> / , . ! @ & # $ % - _ +";
+    return symbols[Math.floor(Math.random() * symbols.length)];
+  }
+
+  console.log(getSymbol());
 
 // Eventos
 
